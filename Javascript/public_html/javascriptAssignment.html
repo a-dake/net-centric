@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form id ="form">
+            Guess: <input type ="text" name="guess">
+
+        </form>
+        <button onclick="test()"> Submit</button>
+        <br>
+
+        <script>
+            init();
+            function getWord() {
+                var words = ["brick", "claw", "doll", "fire", "kid", "math", "poetry", "soap", "toy", "zoo"];
+                var rand = Math.floor((Math.random() * 10) + 0);
+                var word = words[rand];
+                return word;
+
+            }
+
+
+            function init() {
+                word = getWord();
+                //window.alert(word);
+                var spaces = ["_ ", "_ ", "_ ", "_ ", "_ ", "_"];
+                var i = 0;
+                for (i; i < word.length; i++) {
+                    document.write(spaces[i]);
+
+                    
+                    //var input = document.getElementById("input").value;
+                }
+            }
+
+            function test() {
+                
+                //window.alert(word);
+                x = document.getElementById("form");
+                y = x.elements["guess"].value;
+                //window.alert(y);
+                for (i = 0; i < word.length; i++) {
+                    
+                    if (y === word.charAt(i)) {
+                        window.alert(word.charAt(i)+" is the "+(i+1) +" letter of the word");  
+                    }
+                }
+            }
+        </script>
+        <div></div>
+    </body>
+</html>
